@@ -86,22 +86,25 @@ public:
     // индексация
     T& operator[](size_t ind)
     {
-        if (ind < 0 || ind > this->size()) throw "bad index";
         return pMem[ind];
     }
     const T& operator[](size_t ind) const
     {
-        if (ind < 0 || ind > this->size()) throw "bad index";
         return pMem[ind];
 
     }
     // индексация с контролем
     T& at(size_t ind)
     {
+        if (ind < 0 || ind > this->size()) throw "bad index";
+        return pMem[ind];
 
     }
     const T& at(size_t ind) const
     {
+        if (ind < 0 || ind > this->size()) throw "bad index";
+        return pMem[ind];
+
     }
 
     // сравнение

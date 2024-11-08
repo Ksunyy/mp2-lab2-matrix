@@ -57,13 +57,13 @@ TEST(TDynamicVector, can_set_and_get_element)
 TEST(TDynamicVector, throws_when_set_element_with_negative_index)
 {
 	TDynamicVector<int> v(5);
-	ASSERT_ANY_THROW(v[-2] = 9);
+	ASSERT_ANY_THROW(v.at(-4) = 9);
 }
 
 TEST(TDynamicVector, throws_when_set_element_with_too_large_index)
 {
 	TDynamicVector<int> v(5);
-	ASSERT_ANY_THROW(v[v.size() + 1] = 9);
+	ASSERT_ANY_THROW(v.at(v.size() + 1) = 9);
 }
 
 TEST(TDynamicVector, can_assign_vector_to_itself)
