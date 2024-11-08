@@ -252,7 +252,7 @@ public:
     TDynamicVector<T> operator*(const TDynamicVector<T>& v)
     {
         if (v.size() != this->size()) throw "bad value";
-        TDynamicVector res(v.size());
+        TDynamicVector<T> res(v.size());
         T val = 0;
         for (int i = 0; i < this->size(); ++i) {
             for (int j = i; j < this->size(); j++) {
