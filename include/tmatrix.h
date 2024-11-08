@@ -240,7 +240,7 @@ public:
     // матрично-скалярные операции
     TDynamicVector<T> operator*(const T& val)
     {
-        TDynamicMatrix<T> res(s);
+        TDynamicMatrix<T> res(this->size());
         for (int i = 0; i < this->size(); i++) {
             res[i] = (*this)[i] * val;
 
@@ -255,8 +255,8 @@ public:
         TDynamicVector res(v.size());
         T val = 0;
         for (int i = 0; i < this->size(); ++i) {
-            for (j = i; j < this->size; j++) {
-                val += (*this)[i][j] * v.[j];
+            for (int j = i; j < this->size(); j++) {
+                val += (*this)[i][j] * v[i];
 
             }
             res[i] = val;
@@ -288,7 +288,7 @@ public:
     }
     TDynamicMatrix operator*(const TDynamicMatrix& m)
     {
-        TDynamicMatrix res<T>(this->size());
+        TDynamicMatrix res(this->size());
         T val = 0;
         if (this->size() != m.size()) throw "different sizes";
         for (int i = 0; i < this->size(); ++i) {
